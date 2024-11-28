@@ -1,0 +1,76 @@
+@page "/basket"
+@rendermode InteractiveAuto
+
+<PageTitle>Корзина</PageTitle>
+
+<div style="display: flex; justify-content: center;">
+	<div class="basket">
+		<h1 style="text-align: center; font-weight: 1000;">Корзина</h1>
+
+		<div class="money-amount" role="status">Ваши средства: @money.ToString("0 000 ₽")</div>
+		<button class="btn-primary animated-button" @onclick="AddMoney">Пополнить счет</button><br><br>
+
+		<div>Количество маленьких купонов @lowDiscount.Count</div>
+		<button class="btn-primary animated-button" @onclick="AddCupone_1">Получить купон на @lowDiscount.DiscountSize% скидку</button><br><br>
+		<div>Количество средних купонов @MediumDiscount.Count</div>
+		<button class="btn-primary animated-button" @onclick="AddCupone_2">Получить купон на @MediumDiscount.DiscountSize% скидку</button><br><br>
+		<div>Количество серьезных купонов @HightDiscount.Count</div>
+		<button class="btn-primary animated-button" @onclick="AddCupone_3">Получить купон на @HightDiscount.DiscountSize% скидку</button><br><br>
+		
+		<div class="input-field">Использовать скидочный купон<br>
+			<input class="input-line" type="search"/>
+		</div>
+
+		<div class="input-field">Введите адрес доставки<br>
+			<input class="input-line"/>
+		</div>
+
+		<div class="input-field">Введите телефон<br>
+			<input class="input-line"/>
+		</div>
+
+		<div class="input-field">Введите номер карты<br>
+			<input class="input-line"/>
+		</div>
+
+		<div class="input-field">Введите CVV/CVC<br>
+			<input class="input-line"/>
+		</div>
+
+		<div style="text-align: center;">
+			<button class="purchase-button" @onclick="PurchaseProducts">Оплатить</button>
+		</div>
+	</div>
+</div>
+
+@code
+{
+    private double money = 50000;
+    private int additiveMoney = 1000;
+	private double currentCost = 5000;
+
+	Coupon lowDiscount = new() { Count = 2, DiscountSize = 5 };
+	Coupon MediumDiscount = new() { Count = 1, DiscountSize = 10 };
+	Coupon HightDiscount = new() { Count = 0, DiscountSize = 25 };
+
+	partial class Coupon
+	{
+		public int Count {get; set;}
+		public int DiscountSize {get; set;}
+	}
+
+    private void AddMoney()
+    {
+        money += additiveMoney;
+    }
+
+	void AddCupone_1() => lowDiscount.Count++;
+	void AddCupone_2() => MediumDiscount.Count++;
+	void AddCupone_3() => HightDiscount.Count++;
+
+	void PurchaseProducts()
+	{
+		if (money >= currentCost)
+			money -= currentCost;
+	}
+}
