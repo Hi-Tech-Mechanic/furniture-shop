@@ -1,0 +1,83 @@
+# Build output
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.opendb
+*.VC.db
+*.VC.opendb
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# User-specific files
+*.suo
+*.user
+!*.slnLaunch.user
+*.userosscache
+*.sln.docstates
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+*.userprefs
+
+# Rider / JetBrains
+.idea/
+*.iml
+*.iws
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+packages/
+*.nupkg
+project.assets.json
+project.lock.json
+
+# Windows Thumbnail Cache
+Thumbs.db
+
+# Browser extensions
+extension-debugger/
+
+# Local user secrets
+secrets.json
+=RESULTS=
+Backup
+Furniture placement
+
+# Temporary files used during build/publish
+temp/
+tmp/
+artifacts/
+
+# Docker
+Dockerfile
+.dockerignore
+*.dockerfile
+*.docker-compose*

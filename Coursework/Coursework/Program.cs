@@ -1,4 +1,3 @@
-using Coursework.Client.Pages;
 using Microsoft.AspNetCore.StaticFiles;
 using Coursework.Components;
 
