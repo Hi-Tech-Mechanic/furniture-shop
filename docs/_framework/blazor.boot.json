@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "Coursework.Client",
   "resources": {
-    "hash": "sha256-cTmaKfzssoSAar++rYGquebiG2ZqSvBDpaEE6Njj/T8=",
+    "hash": "sha256-qEFvpN+ub8N3DTd+ECoeGrJON1cUbqA8ycP8o7x+CfE=",
     "fingerprinting": {
-      "Coursework.Client.ote1wdibeq.wasm": "Coursework.Client.wasm",
+      "Coursework.Client.uyth8kycjb.wasm": "Coursework.Client.wasm",
       "Microsoft.AspNetCore.Components.aiigamo928.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.t27xjfulz7.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.hnblnx3fmn.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
@@ -60,7 +60,7 @@
       "System.Runtime.InteropServices.JavaScript.x50649m5t2.wasm": "sha256-VS4CSyZJNRAj+SrJqgbXBFWlGMlNDgM4rbwJ6gTH5qg="
     },
     "assembly": {
-      "Coursework.Client.ote1wdibeq.wasm": "sha256-TFXx7CAy47xxXFPdIKvttD4/Sbrs2SqM/9pnhl7eV0c=",
+      "Coursework.Client.uyth8kycjb.wasm": "sha256-9qm4nOOo4ExQKDBT7WJsK2ML2t10YA0Dq3f10TDFnmI=",
       "Microsoft.AspNetCore.Components.aiigamo928.wasm": "sha256-Thwe5W63hZDBiXo6DtFoaBVJfbV6LQBeIkRkLSipHJw=",
       "Microsoft.AspNetCore.Components.Web.t27xjfulz7.wasm": "sha256-664jzfZT6GOR9xIxolXlOWmRqop1dWRyYj1iSmTB62c=",
       "Microsoft.AspNetCore.Components.WebAssembly.hnblnx3fmn.wasm": "sha256-w0ZPf0Zmg3n3PdMoiws14VWUhPC273i9avPZSxFvonE=",
