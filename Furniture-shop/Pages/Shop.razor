@@ -1,0 +1,619 @@
+﻿@using static SpecificationSheet;
+@page "/shop"
+
+<PageTitle>Shop</PageTitle>
+
+<NavLink class="nav-link basket-link animated-button" href="basket">
+    <img src="https://lk.easynetshop.ru/box/cart_default.svg"/> Корзина
+</NavLink>
+
+<div class="main">
+    <h2>Мебель для гостинной</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (LivingRoomFurnitureData.LivingRoomFurnitureList != null)
+        {
+            @foreach (var product in LivingRoomFurnitureData.LivingRoomFurnitureList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                        <span class="price">@product.GetFormattedBasePrice()</span>
+                        <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Мебель для прихожей</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (FurnitureForTheHallwayData.FurnitureForTheHallwayList != null)
+        {
+            @foreach (var product in FurnitureForTheHallwayData.FurnitureForTheHallwayList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main"> 
+    <h2>Мягкая мебель</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (SofasData.SofasList != null)
+        {
+            @foreach (var sofa in SofasData.SofasList)
+            {
+                <li style="background-image: url('@sofa.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@sofa.Name</span><br>
+
+                        @if (sofa.Width != null)
+                            {<a>Ширина: @(sofa.Width)мм</a><br>}
+
+                        @if (sofa.Height != null)
+                            {<a>Высота: @(sofa.Height)мм</a><br>}
+
+                        @if (sofa.Depth != null)
+                            {<a>Глубина: @(sofa.Depth)мм</a><br>}
+
+                        @if (sofa.BodyMaterial != null)
+                            {<a>Материал корпуса: @(sofa.BodyMaterial)см</a><br>}
+
+                        @if (sofa.SeatHeight != null)
+                            {<a>Высота сиденья: @(sofa.SeatHeight)см</a><br>}
+
+                        @if (sofa.SeatDepth != null)
+                            {<a>Глубина сиденья: @(sofa.SeatDepth)см</a><br>}
+
+                        @if (sofa.PadsOnArmrests != null)
+                            {<a>Накладки на подлокотниках: @(sofa.PadsOnArmrests)</a><br>}
+
+                        @if (sofa.Frame != null)
+                            {<a>Каркас: @(sofa.Frame)</a><br>}
+
+                        @if (sofa.Mattress != null)
+                            {<a>Матрас: @(sofa.Mattress)</a><br>}
+
+                        @if (sofa.TransformationMechanism != null)
+                            {<a>Механизм трансформации: @(sofa.TransformationMechanism)</a><br>}
+
+                        @if (sofa.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(sofa.MaximumLoad) кг на спальное место</a><br>}
+
+                        @if (sofa.Case != null)
+                            {<a>Чехол: @(sofa.Case)</a><br>}
+
+                            <span class="price">@sofa.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main"> 
+    <h2>Мебель для спальни</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (BedroomFurnitureData.BedroomFurnitureList != null)
+        {
+            @foreach (var product in BedroomFurnitureData.BedroomFurnitureList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Детская мебель</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (ChildFurnitureData.ChildFurnitureList != null)
+        {
+            @foreach (var product in ChildFurnitureData.ChildFurnitureList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Мебель для кухни</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (KitchenFurnitureData.KitchenFurnitureList != null)
+        {
+            @foreach (var product in KitchenFurnitureData.KitchenFurnitureList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Шкафы для дома</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (CabinetsForHomeData.CabinetsForHomeList != null)
+        {
+            @foreach (var product in CabinetsForHomeData.CabinetsForHomeList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Матрасы</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (MattressData.MattressList != null)
+        {
+            @foreach (var product in MattressData.MattressList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Composition != null)
+                            {
+                                <a>Состав:</a>
+                                <ol>
+                                @foreach (string element in product.Composition)
+                                {
+                                    <li>@element</li>
+                                }
+                                </ol>
+                            }
+                            
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.Case != null)
+                            {<a>Тип чехла: @(product.Depth)</a><br>}
+
+                        @if (product.Rigidity != null)
+                            {<a>Жесткость @(product.LoadWeight)</a><br>}
+
+                        @if (product.LoadWeight != null)
+                            {<a>Вес нагрузки: до @(product.LoadWeight) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Мебель для ванной комнаты</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (BathroomFurnitureData.BathroomFurnitureList != null)
+        {
+            @foreach (var product in BathroomFurnitureData.BathroomFurnitureList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>
+
+<div class="main">
+    <h2>Мебель для домашнего кабинета и офиса</h2>
+    <div class="underline-header-row"></div>
+    <ul class="product-cards">
+        @if (FurnitureForHomeOfficeAndOfficeData.FurnitureForHomeOfficeAndOfficeList != null)
+        {
+            @foreach (var product in FurnitureForHomeOfficeAndOfficeData.FurnitureForHomeOfficeAndOfficeList)
+            {
+                <li style="background-image: url('@product.ImageUrl')">
+                    <div class="product-info">
+                        <span class="title">@product.Name</span><br>
+
+                        @if (product.Width != null)
+                            {<a>Ширина: @(product.Width)мм</a><br>}
+
+                        @if (product.Height != null)
+                            {<a>Высота: @(product.Height)мм</a><br>}
+
+                        @if (product.Depth != null)
+                            {<a>Глубина: @(product.Depth)мм</a><br>}
+
+                        @if (product.BodyMaterial != null)
+                            {<a>Материал корпуса: @(product.BodyMaterial)</a><br>}
+
+                        @if (product.FacadeMaterial != null)
+                            {<a>Материал фасада: @(product.FacadeMaterial)</a><br>}
+
+                        @if (product.UpholsteryMaterial != null)
+                            {<a>Материал обивки: @(product.UpholsteryMaterial)</a><br>}
+
+                        @if (product.HandleMaterial != null)
+                            {<a>Материал ручек: @(product.HandleMaterial)</a><br>}
+
+                        @if (product.Filler != null)
+                            {<a>Наполнитель: @(product.Filler)</a><br>}
+
+                        @if (product.Edge != null)
+                            {<a>Кромка: @(product.Edge)</a><br>}
+
+                        @if (product.BodyColor != null)
+                            {<a>Цвет корпуса: @(product.BodyColor)</a><br>}
+
+                        @if (product.FacadeColor != null)
+                            {<a>Цвет фасада: @(product.FacadeColor)</a><br>}
+
+                        @if (product.Guides != null)
+                            {<a>Направляющие: @(product.Guides)</a><br>}
+
+                        @if (product.MaximumLoad != null)
+                            {<a>Максимальная нагрузка: @(product.MaximumLoad) кг</a><br>}
+
+                        @if (product.MaximumLoadPerShelf != null)
+                            {<a>Максимальная нагрузка на полку: @(product.MaximumLoadPerShelf) кг</a><br>}
+
+                            <span class="price">@product.GetFormattedBasePrice()</span>
+                            <button class="busket-button animated-button" onclick="">В корзину</button>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div><br>

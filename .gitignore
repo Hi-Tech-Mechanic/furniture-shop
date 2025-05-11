@@ -67,8 +67,8 @@ extension-debugger/
 
 # Local user secrets
 secrets.json
-=RESULTS=
-Backup
+=Results=
+=Backup=
 Furniture placement
 
 # Temporary files used during build/publish
